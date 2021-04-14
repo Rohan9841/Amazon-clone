@@ -13,15 +13,15 @@ const Header = () => {
 
     const [state, dispatch] = useStateValue();
 
-    console.log("value of user before handleAuthentication: ", state.user);
+    // console.log("value of user before handleAuthentication: ", state.user);
 
     const handleAuthentication = () => {
 
         if (state.user) {
             auth.signOut();
-            console.log("User has been signed out.");
+            // console.log("User has been signed out.");
         } else {
-            console.log('There is no user to sign out. Current value of user is: ', state.user);
+            // console.log('There is no user to sign out. Current value of user is: ', state.user);
         }
     }
     return (

@@ -23,14 +23,14 @@ function App() {
       console.log('User is >>> ', authUser);
       if (authUser) {
         //the user just logged in or was logged in
-        console.log('Auth user is found when logging in. Value is: ', authUser)
+        // console.log('Auth user is found when logging in. Value is: ', authUser)
         dispatch({
           type: 'SET_USER',
           user: authUser
         })
       } else {
         //user is logged out
-        console.log('There is no Auth user when logging in')
+        // console.log('There is no Auth user when logging in')
         dispatch({
           type: 'SET_USER',
           user: null
