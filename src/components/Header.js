@@ -11,17 +11,17 @@ const Header = () => {
 
     const headerStyles = HeaderStyles();
 
-    const [state, { user }, dispatch] = useStateValue();
+    const [state, dispatch] = useStateValue();
 
-    console.log("value of user before handleAuthentication: ", user);
+    console.log("value of user before handleAuthentication: ", state.user);
 
     const handleAuthentication = () => {
 
-        if (user) {
+        if (state.user) {
             auth.signOut();
             console.log("User has been signed out.");
         } else {
-            console.log('There is no user to sign out. Current value of user is: ', user);
+            console.log('There is no user to sign out. Current value of user is: ', state.user);
         }
     }
     return (
@@ -38,10 +38,10 @@ const Header = () => {
             </div>
 
             <div className={headerStyles.header_nav}>
-                <Link to={!user && '/login'}>
+                <Link to={!state.user && '/login'}>
                     <div className={headerStyles.header_option} onClick={handleAuthentication}>
-                        <span className={headerStyles.header_optionLineOne}>Hello Guest</span>
-                        <span className={headerStyles.header_optionLineTwo}>{user ? 'Sign Out' : 'Sign In'}</span>
+                        <span className={headerStyles.header_optionLineOne}>Hello {state.user ? state.user.email : 'Guest'}</span>
+                        <span className={headerStyles.header_optionLineTwo}>{state.user ? 'Sign Out' : 'Sign In'}</span>
                     </div>
                 </Link>
                 <div className={headerStyles.header_option}>

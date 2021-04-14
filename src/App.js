@@ -23,7 +23,7 @@ function App() {
       console.log('User is >>> ', authUser);
       if (authUser) {
         //the user just logged in or was logged in
-        console.log('Auth user is found when logging in. Value is: ', authUser.email)
+        console.log('Auth user is found when logging in. Value is: ', authUser)
         dispatch({
           type: 'SET_USER',
           user: authUser
