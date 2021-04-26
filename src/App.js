@@ -14,6 +14,7 @@ import { useStateValue } from './components/StateProvider';
 import Payment from './components/Payment';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import Orders from './components/Orders';
 
 const promise = loadStripe("pk_test_51IgVirDuKBO4v6MwtHEbC2ICyv9pmNgOj1jGT6MDI18pWppFbHyOszuwiQgleXoMFzRj3QEP5y8pNUhtoSwx7sm700vRiUwlvd");
 
@@ -53,6 +54,10 @@ function App() {
         <MuiThemeProvider theme={theme}>
 
           <Switch>
+            <Route path="/orders">
+              <Header />
+              <Orders />
+            </Route>
             <Route path="/login">
               <Login />
             </Route>

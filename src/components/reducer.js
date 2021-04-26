@@ -33,7 +33,11 @@ const reducer = (state, action) => {
                 ...state,
                 basket: newBasket
             }
-
+        case 'EMPTY_BASKET':
+            return {
+                ...state,
+                basket: []
+            }
         case 'SET_USER':
             // console.log("Set user is called inside the reducer.Value passed: ", action.user)
             return {
